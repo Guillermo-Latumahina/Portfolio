@@ -1,0 +1,582 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../img/background.png');
+}
+
+
+/* Navbar */
+
+nav {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #5D4954;
+    font-family: 'Poppins';
+    z-index: 1;
+}
+
+.nav-title {
+    color: rgb(220, 220, 220);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 17px;
+}
+
+
+/* Menu */
+
+.menu-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.menu-wrap .toggler {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+    cursor: pointer;
+    width: 35px;
+    height: 29px;
+    opacity: 0;
+}
+
+.menu-wrap .burger {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(226, 226, 226);
+    margin: 5px;
+    transition: 0.3s ease;
+}
+
+
+/* Burger animation */
+
+.menu-wrap .toggler:checked+.burger .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-wrap .toggler:checked+.burger .line2 {
+    opacity: 0;
+}
+
+.menu-wrap .toggler:checked+.burger .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+/* Show menu */
+
+.menu-wrap .toggler:checked~.menu {
+    visibility: visible;
+}
+
+.menu {
+    position: fixed;
+    top: 8vh;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.menu-items {
+    height: auto;
+    width: 100%;
+    background-color: #5D4954;
+}
+
+.menu-items ul li a {
+    width: 100%;
+}
+
+.menu-items a {
+    display: flex;
+    padding: 25px;
+    color: rgb(220, 220, 220);
+    font-size: 25px;
+    text-decoration: none;
+    border-bottom: 1px solid black;
+}
+
+a.active-page {
+    color: rgb(124, 124, 124);
+    font-weight: bold;
+    pointer-events: none;
+}
+
+
+/* Homepage Content */
+
+.container {
+    padding-top: 8vh;
+}
+
+.title h2 {
+    padding: 20px 20px 20px;
+    font-family: 'Poppins';
+    font-size: 50px;
+    color: white;
+    line-height: 44px;
+}
+
+
+/* Portfolio item styles */
+
+.portfolio-items-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.portfolio-item-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 25px;
+}
+
+.portfolio-img-background {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(30%);
+}
+
+.img-text-wrapper {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
+.logo-wrapper img {
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-weight: 600;
+    font-family: 'Poppins';
+    color: lightseagreen;
+}
+
+
+/* About me content */
+
+.banner {
+    display: none;
+}
+
+.about-me-wrapper {
+    padding-top: 10px;
+    width: 100%;
+}
+
+.img-info {
+    width: 100%;
+}
+
+.img-info h2 {
+    padding: 20px 30px 20px;
+    font-family: 'Poppins';
+    font-size: 35px;
+    color: rgb(220, 220, 220);
+    line-height: 44px;
+}
+
+.img-info p {
+    padding: 0px 30px 20px;
+    font-family: Arial;
+    font-size: 16px;
+    color: rgb(220, 220, 220);
+    line-height: 24px;
+}
+
+.img-me {
+    width: 100%;
+    padding: 25px;
+}
+
+
+/* Curriculum vitae content */
+
+.cv {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    padding-top: 25px;
+}
+
+.cv-title {
+    font-family: 'Poppins';
+    font-size: 12px;
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+
+/* Personalia */
+
+.left,
+.right {
+    font-family: 'Poppins';
+    background: #5D4954;
+    width: 85%;
+    border-radius: 2.5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.left .cv-img {
+    padding: 20px 0;
+}
+
+.left .cv-img img {
+    width: 200px;
+    border-radius: 2px;
+}
+
+.pb {
+    padding-bottom: 20px;
+}
+
+.cv-titles {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    padding: 15px 0 15px 0;
+    position: relative;
+    text-decoration: underline 3px white;
+}
+
+.contact .li-wrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 15px;
+}
+
+.contact .li-wrap .icon {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.contact .li-wrap .cv-text {
+    font-size: 17px;
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+.skills ul,
+.hobbies ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skills .li-wrap,
+.hobbies .li-wrap {
+    width: 110px;
+    height: 110px;
+    margin: 5px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills .li-wrap {
+    background: white;
+}
+
+.skills .li-wrap .cv-text,
+.hobbies .li-wrap .cv-text {
+    margin-top: 5px;
+}
+
+.hobbies .li-wrap,
+.skills .li-wrap {
+    border: 2px solid white;
+}
+
+.hobbies .li-wrap .icon,
+.hobbies .li-wrap .cv-text {
+    color: white;
+}
+
+.right {
+    background-color: rgb(202, 202, 202);
+}
+
+.right .cv-titles {
+    color: black;
+    text-decoration: underline 3px black;
+}
+
+.experience,
+.education {
+    width: 90%;
+    padding-bottom: 20px;
+}
+
+.li-wrap .date {
+    font-size: 19px;
+    font-weight: 600;
+    padding-top: 5px;
+}
+
+.li-wrap .info {
+    padding-left: 25px;
+    position: relative;
+}
+
+.li-wrap .info-title {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #5D4954;
+}
+
+.li-wrap .info-com {
+    font-weight: 300;
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+.li-wrap .info-cont {
+    font-size: 16px;
+    padding-top: 10px;
+}
+
+.li-wrap .info:before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background: #5D4954;
+    border-radius: 50%;
+}
+
+.li-wrap .info:after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 4px;
+    width: 2px;
+    height: 90%;
+    background: #5D4954;
+}
+
+
+/* Tablet size */
+
+@media only screen and (min-width: 768px) {
+    .nav-title {
+        font-size: 25px;
+    }
+    .title h2 {
+        padding: 30px 30px 30px;
+    }
+    .portfolio-item-wrapper {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 40px;
+    }
+    .subtitle {
+        font-size: 19px;
+    }
+    /* About me */
+    .banner {
+        width: 100%;
+        display: block;
+        height: 150px;
+    }
+    .burger {
+        display: none;
+    }
+    /* Menu */
+    .menu-wrap {
+        display: flex;
+        width: 100%;
+        height: 8vh;
+    }
+    .menu {
+        height: 100%;
+        width: 100%;
+        position: unset;
+        top: unset;
+        visibility: visible;
+        overflow: unset;
+        transition: unset;
+    }
+    .menu-items {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        width: unset;
+        background-color: transparent;
+    }
+    .menu-items ul {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        list-style: none;
+    }
+    .menu-items a {
+        line-height: 4vh;
+        font-size: 20px;
+        padding: unset;
+        border-bottom: unset;
+    }
+    /* CV */
+    .cv-title {
+        font-size: 14px;
+    }
+}
+
+
+/* PC size */
+
+@media only screen and (min-width: 1000px) {
+    .title h2 {
+        padding: 30px 40px 20px;
+    }
+    .nav-title {
+        font-size: 30px;
+    }
+    .portfolio-items-wrapper {
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 10px;
+    }
+    .portfolio-item-wrapper {
+        padding: 5px;
+    }
+    .portfolio-img-background {
+        height: 325px;
+        transition: 1s ease;
+        filter: brightness(100%);
+    }
+    .img-text-wrapper {
+        width: 100%;
+    }
+    .img-text-wrapper .subtitle {
+        transition: 1s ease;
+        color: transparent;
+    }
+    .img-text-wrapper:hover .subtitle {
+        font-weight: 600;
+        font-family: 'Poppins';
+        color: lightseagreen;
+    }
+    .img-darken {
+        transition: 1s ease;
+        filter: brightness(30%);
+    }
+    /* Menu */
+    .menu-items a {
+        color: rgb(226, 226, 226);
+        text-decoration: none;
+        letter-spacing: 3px;
+        font-weight: bold;
+        font-size: 14px;
+        border-bottom: 1px solid transparent;
+        transition: .5s ease-in;
+    }
+    .menu-items a:hover {
+        border-bottom: 1px solid rgb(220, 220, 220);
+    }
+    a.active-page {
+        color: rgb(124, 124, 124);
+        font-weight: bold;
+        pointer-events: none;
+    }
+    /* About me */
+    .img-info {
+        width: 50%;
+        float: right;
+    }
+    .img-info h2 {
+        padding: 20px 50px 0px 30px;
+    }
+    .img-info p {
+        padding: 20px 50px 0px 30px;
+    }
+    .img-me {
+        padding-top: 0px;
+        width: 50%;
+        float: left;
+    }
+    /* CV */
+    .cv {
+        padding-top: 25px;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .left {
+        height: 100%;
+        width: 30%;
+    }
+    .right {
+        align-self: flex-start;
+        width: 60%;
+        height: 100%;
+    }
+    .hobbies .li-wrap:hover {
+        background: white;
+    }
+    .hobbies .li-wrap:hover .icon,
+    .hobbies .li-wrap:hover .cv-text {
+        color: #5D4954;
+    }
+}
